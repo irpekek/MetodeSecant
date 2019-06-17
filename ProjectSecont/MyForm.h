@@ -36,23 +36,20 @@ namespace ProjectSecont {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Button^ calculate;
+	protected:
 
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::TextBox^ nilai1_in;
+	private: System::Windows::Forms::TextBox^ nilai2_in;
+	private: System::Windows::Forms::TextBox^ galat_in;
+
+	private: System::Windows::Forms::Label^ nilai1_text;
+	private: System::Windows::Forms::Label^ nilai2_text;
+	private: System::Windows::Forms::Label^ galat_text;
+
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Label^ arrow_btn;
 
-
-
-
-
-
-
-	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ No;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ X1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ X2;
@@ -60,66 +57,8 @@ namespace ProjectSecont {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ FX1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ FX2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ FX3;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::Label^ akarPers_text;
+	private: System::Windows::Forms::Label^ akarPers_in;
 
 
 	protected:
@@ -137,19 +76,20 @@ namespace ProjectSecont {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle7 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle8 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle10 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle11 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle12 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle9 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
+			this->calculate = (gcnew System::Windows::Forms::Button());
+			this->nilai1_in = (gcnew System::Windows::Forms::TextBox());
+			this->nilai2_in = (gcnew System::Windows::Forms::TextBox());
+			this->galat_in = (gcnew System::Windows::Forms::TextBox());
+			this->nilai1_text = (gcnew System::Windows::Forms::Label());
+			this->nilai2_text = (gcnew System::Windows::Forms::Label());
+			this->galat_text = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->No = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->X1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -158,88 +98,92 @@ namespace ProjectSecont {
 			this->FX1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->FX2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->FX3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->arrow_btn = (gcnew System::Windows::Forms::Label());
+			this->akarPers_text = (gcnew System::Windows::Forms::Label());
+			this->akarPers_in = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// button1
+			// calculate
 			// 
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->calculate->BackColor = System::Drawing::Color::Transparent;
+			this->calculate->FlatAppearance->BorderSize = 0;
+			this->calculate->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->calculate->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(53, 176);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(76, 24);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Calculate";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::Button1_Click);
+			this->calculate->Location = System::Drawing::Point(53, 176);
+			this->calculate->Name = L"calculate";
+			this->calculate->Size = System::Drawing::Size(76, 24);
+			this->calculate->TabIndex = 0;
+			this->calculate->Text = L"Calculate";
+			this->calculate->UseVisualStyleBackColor = false;
+			this->calculate->Click += gcnew System::EventHandler(this, &MyForm::Button1_Click);
 			// 
-			// textBox1
+			// nilai1_in
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->nilai1_in->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(37, 65);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(112, 22);
-			this->textBox1->TabIndex = 1;
-			this->textBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::TextBox1_KeyPress);
+			this->nilai1_in->Location = System::Drawing::Point(37, 65);
+			this->nilai1_in->Name = L"nilai1_in";
+			this->nilai1_in->Size = System::Drawing::Size(112, 22);
+			this->nilai1_in->TabIndex = 1;
+			this->nilai1_in->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::TextBox1_KeyPress);
 			// 
-			// textBox2
+			// nilai2_in
 			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->nilai2_in->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(37, 104);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(112, 22);
-			this->textBox2->TabIndex = 3;
-			this->textBox2->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::TextBox2_KeyPress);
+			this->nilai2_in->Location = System::Drawing::Point(37, 104);
+			this->nilai2_in->Name = L"nilai2_in";
+			this->nilai2_in->Size = System::Drawing::Size(112, 22);
+			this->nilai2_in->TabIndex = 3;
+			this->nilai2_in->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::TextBox2_KeyPress);
 			// 
-			// textBox3
+			// galat_in
 			// 
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->galat_in->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(37, 143);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(112, 22);
-			this->textBox3->TabIndex = 4;
-			this->textBox3->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::TextBox3_KeyPress);
+			this->galat_in->Location = System::Drawing::Point(37, 143);
+			this->galat_in->Name = L"galat_in";
+			this->galat_in->Size = System::Drawing::Size(112, 22);
+			this->galat_in->TabIndex = 4;
+			this->galat_in->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::TextBox3_KeyPress);
 			// 
-			// label2
+			// nilai1_text
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->nilai1_text->AutoSize = true;
+			this->nilai1_text->BackColor = System::Drawing::Color::Transparent;
+			this->nilai1_text->Font = (gcnew System::Drawing::Font(L"Open Sans", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(34, 49);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(42, 13);
-			this->label2->TabIndex = 5;
-			this->label2->Text = L"Nilai 1:";
+			this->nilai1_text->Location = System::Drawing::Point(34, 49);
+			this->nilai1_text->Name = L"nilai1_text";
+			this->nilai1_text->Size = System::Drawing::Size(44, 15);
+			this->nilai1_text->TabIndex = 5;
+			this->nilai1_text->Text = L"Nilai 1:";
 			// 
-			// label3
+			// nilai2_text
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->nilai2_text->AutoSize = true;
+			this->nilai2_text->BackColor = System::Drawing::Color::Transparent;
+			this->nilai2_text->Font = (gcnew System::Drawing::Font(L"Open Sans", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(34, 88);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(42, 13);
-			this->label3->TabIndex = 6;
-			this->label3->Text = L"Nilai 2:";
+			this->nilai2_text->Location = System::Drawing::Point(34, 88);
+			this->nilai2_text->Name = L"nilai2_text";
+			this->nilai2_text->Size = System::Drawing::Size(44, 15);
+			this->nilai2_text->TabIndex = 6;
+			this->nilai2_text->Text = L"Nilai 2:";
 			// 
-			// label4
+			// galat_text
 			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->galat_text->AutoSize = true;
+			this->galat_text->BackColor = System::Drawing::Color::Transparent;
+			this->galat_text->Font = (gcnew System::Drawing::Font(L"Open Sans", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(34, 127);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(65, 13);
-			this->label4->TabIndex = 7;
-			this->label4->Text = L"Galat Error:";
+			this->galat_text->Location = System::Drawing::Point(34, 127);
+			this->galat_text->Name = L"galat_text";
+			this->galat_text->Size = System::Drawing::Size(71, 15);
+			this->galat_text->TabIndex = 7;
+			this->galat_text->Text = L"Galat Error:";
 			// 
 			// dataGridView1
 			// 
@@ -247,52 +191,52 @@ namespace ProjectSecont {
 			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->AllowUserToResizeColumns = false;
 			this->dataGridView1->AllowUserToResizeRows = false;
-			dataGridViewCellStyle7->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle7->BackColor = System::Drawing::Color::Lime;
-			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle1->BackColor = System::Drawing::Color::Lime;
+			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->dataGridView1->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle8->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle8->Font = (gcnew System::Drawing::Font(L"Fira Code", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle8->ForeColor = System::Drawing::Color::MediumSlateBlue;
-			dataGridViewCellStyle8->SelectionBackColor = System::Drawing::Color::White;
-			dataGridViewCellStyle8->SelectionForeColor = System::Drawing::Color::MediumSlateBlue;
-			dataGridViewCellStyle8->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle2->ForeColor = System::Drawing::Color::MediumSlateBlue;
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::White;
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::Color::MediumSlateBlue;
+			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {
 				this->No, this->X1,
 					this->X2, this->X3, this->FX1, this->FX2, this->FX3
 			});
-			dataGridViewCellStyle10->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle10->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle10->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle10->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle10->SelectionBackColor = System::Drawing::Color::WhiteSmoke;
-			dataGridViewCellStyle10->SelectionForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle10->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle10;
+			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle4->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle4->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::Color::WhiteSmoke;
+			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle4;
 			this->dataGridView1->EnableHeadersVisualStyles = false;
 			this->dataGridView1->GridColor = System::Drawing::Color::SkyBlue;
 			this->dataGridView1->Location = System::Drawing::Point(220, 30);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Single;
-			dataGridViewCellStyle11->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle11->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle11->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle11->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle11->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle11->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView1->RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this->dataGridView1->RowHeadersVisible = false;
-			dataGridViewCellStyle12->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			this->dataGridView1->RowsDefaultCellStyle = dataGridViewCellStyle12;
+			dataGridViewCellStyle6->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			this->dataGridView1->RowsDefaultCellStyle = dataGridViewCellStyle6;
 			this->dataGridView1->RowTemplate->DefaultCellStyle->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
 			this->dataGridView1->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 			this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
@@ -303,8 +247,8 @@ namespace ProjectSecont {
 			// No
 			// 
 			this->No->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::ColumnHeader;
-			dataGridViewCellStyle9->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			this->No->DefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			this->No->DefaultCellStyle = dataGridViewCellStyle3;
 			this->No->HeaderText = L"No";
 			this->No->Name = L"No";
 			this->No->ReadOnly = true;
@@ -378,65 +322,69 @@ namespace ProjectSecont {
 			this->FX3->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 			this->FX3->Width = 50;
 			// 
-			// label1
+			// arrow_btn
 			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::White;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Fira Code", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->arrow_btn->AutoSize = true;
+			this->arrow_btn->BackColor = System::Drawing::Color::Transparent;
+			this->arrow_btn->Font = (gcnew System::Drawing::Font(L"Fira Code", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(576, 201);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(21, 13);
-			this->label1->TabIndex = 9;
-			this->label1->Text = L"<-";
-			this->label1->Click += gcnew System::EventHandler(this, &MyForm::Label1_Click);
+			this->arrow_btn->ForeColor = System::Drawing::Color::Black;
+			this->arrow_btn->Location = System::Drawing::Point(576, 201);
+			this->arrow_btn->Name = L"arrow_btn";
+			this->arrow_btn->Size = System::Drawing::Size(21, 13);
+			this->arrow_btn->TabIndex = 9;
+			this->arrow_btn->Text = L"<-";
+			this->arrow_btn->Click += gcnew System::EventHandler(this, &MyForm::Label1_Click);
 			// 
-			// label5
+			// akarPers_text
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->akarPers_text->AutoSize = true;
+			this->akarPers_text->Font = (gcnew System::Drawing::Font(L"Open Sans", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(34, 9);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(34, 13);
-			this->label5->TabIndex = 10;
-			this->label5->Text = L"ƒ( X ):";
+			this->akarPers_text->ForeColor = System::Drawing::Color::Black;
+			this->akarPers_text->Location = System::Drawing::Point(34, 9);
+			this->akarPers_text->Name = L"akarPers_text";
+			this->akarPers_text->Size = System::Drawing::Size(37, 15);
+			this->akarPers_text->TabIndex = 10;
+			this->akarPers_text->Text = L"ƒ( X ):";
 			// 
-			// label6
+			// akarPers_in
 			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->akarPers_in->AutoSize = true;
+			this->akarPers_in->Font = (gcnew System::Drawing::Font(L"Open Sans", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(34, 30);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(100, 13);
-			this->label6->TabIndex = 11;
-			this->label6->Text = L"-1/3 * X ^ 3 + X - 9";
+			this->akarPers_in->ForeColor = System::Drawing::Color::DimGray;
+			this->akarPers_in->Location = System::Drawing::Point(34, 30);
+			this->akarPers_in->Name = L"akarPers_in";
+			this->akarPers_in->Size = System::Drawing::Size(100, 15);
+			this->akarPers_in->TabIndex = 11;
+			this->akarPers_in->Text = L"-1/3 * X ^ 3 + X - 9";
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->ClientSize = System::Drawing::Size(599, 217);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label1);
+			this->ClientSize = System::Drawing::Size(599, 220);
+			this->Controls->Add(this->akarPers_in);
+			this->Controls->Add(this->akarPers_text);
+			this->Controls->Add(this->arrow_btn);
 			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->galat_text);
+			this->Controls->Add(this->nilai2_text);
+			this->Controls->Add(this->nilai1_text);
+			this->Controls->Add(this->galat_in);
+			this->Controls->Add(this->nilai2_in);
+			this->Controls->Add(this->nilai1_in);
+			this->Controls->Add(this->calculate);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"MyForm";
-			this->Opacity = 0.97;
+			this->Opacity = 0.95;
 			this->ShowIcon = false;
-			this->Text = L"Secant Method";
+			this->Text = L"S.M.";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
@@ -444,6 +392,8 @@ namespace ProjectSecont {
 
 		}
 #pragma endregion
+
+// ** Main Code start from here **
 
 	public: double fungsiFX(double X)
 	{
@@ -465,10 +415,10 @@ namespace ProjectSecont {
 		dataGridView1->Rows->Clear();
 		dataGridView1->Refresh();
 
-		if (textBox1->Text->Length != 0 || textBox2->Text->Length != 0 || textBox3->Text->Length != 0) {
-			String^ inA = textBox1->Text;
-			String^ inB = textBox2->Text;
-			String^ inC = textBox3->Text;
+		if (nilai1_in->Text->Length != 0 || nilai2_in->Text->Length != 0 || galat_in->Text->Length != 0) {
+			String^ inA = nilai1_in->Text;
+			String^ inB = nilai2_in->Text;
+			String^ inC = galat_in->Text;
 
 			X0[0] = System::Convert::ToDouble(inA);
 			X1[0] = System::Convert::ToDouble(inB);
